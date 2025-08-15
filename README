@@ -10,3 +10,63 @@ microcredito_risco/
 │   └── risk_service.py     # Cálculo do risco
 ├── requirements.txt        # Dependências do projeto
 └── README.md               # (opcional) Documentação
+
+
+
+1. O que é “risco de crédito agrícola”?
+
+É basicamente a probabilidade de um agricultor não pagar o empréstimo que pediu.
+No setor agrícola, isso depende de várias coisas:
+
+Dados de cultivos → Que planta ele cultiva? (milho, feijão, café…)
+
+Sazonalidade → Qual a época do ano? (chuvas, seca, colheita…)
+
+Garantias de crédito → O que ele oferece como segurança para o banco? (terreno, gado, máquinas…)
+
+2. Como o Machine Learning entra nisso?
+
+Machine Learning (ML) é como ensinar o computador a reconhecer padrões olhando para casos do passado.
+
+Exemplo simples:
+
+Pegamos dados de agricultores anteriores (quem pagou, quem não pagou).
+
+O computador aprende as características comuns de quem paga e de quem não paga.
+
+Depois, com um novo agricultor, ele estima: “A chance dele não pagar é de X%”.
+
+3. Por que usar o Naive Bayes?
+
+O Naive Bayes é um tipo de modelo de ML que usa probabilidades para prever resultados.
+Ele é:
+
+Simples → Não precisa de muitos ajustes complicados.
+
+Rápido → Aprende rápido com os dados.
+
+Bom para dados categóricos → Como “tipo de cultivo” ou “tipo de garantia”.
+
+O nome “Naive” (ingênuo) é porque ele assume que todas as informações são independentes (mesmo que, na realidade, muitas vezes não sejam).
+
+4. Como funcionaria na prática (resumo para leigos)?
+
+Coletar dados
+Exemplo de tabela:
+
+Cultivo	Época do Ano	Garantia	Pagou?
+Milho	Chuva	Terreno	Sim
+Café	Seca	Gado	Não
+Feijão	Colheita	Sem garantia	Não
+Milho	Seca	Máquinas	Sim
+
+Treinar o modelo
+
+O Naive Bayes analisa e calcula:
+“Se for milho na época de chuva com terreno como garantia, a probabilidade de pagar é X%.”
+
+Prever para novos casos
+
+Você informa: Cultivo = Café, Época = Seca, Garantia = Gado
+
+O modelo retorna: “Risco alto de não pagar” ou “Risco baixo”.
