@@ -1,0 +1,12 @@
+{
+    "score": 0.76,
+    "classificacao": "Baixo"
+}
+
+microcredito_risco/
+│
+├── app.py                  # Ponto de entrada da API
+├── services/
+│   └── risk_service.py     # Cálculo do risco
+├── requirements.txt        # Dependências do projeto
+└── README.md               # (opcional) Documentação
