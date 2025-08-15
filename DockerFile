@@ -1,0 +1,20 @@
+# Imagem base do Python
+FROM python:3.11-slim
+
+# Criar e usar o diretório da aplicação
+WORKDIR /app
+
+# Copiar os arquivos de dependências
+COPY requirements.txt .
+
+# Instalar dependências
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiar o restante da aplicação
+COPY . .
+
+# Expõe a porta que a aplicação usa
+EXPOSE 8000
+
+# Comando para iniciar a aplicação
+CMD ["python", "app.py"]
